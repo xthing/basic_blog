@@ -4,17 +4,18 @@ This README would normally document whatever steps are necessary to get the appl
 
 Things you may want to cover:
 
-*Cchanges made to css under app/assets/stylesheets for posts and practices. 
+*Changes made to css under app/assets/stylesheets for posts and practices. Using Bootstrap styling on post pages.  
 
-* System dependencies
+* Requires Bootstrap gem, JQuery, 
 
-* Configuration
+* Configuration : Passwords are kept in C:\local_sites\rails_sites\tech_talent_blog\app\assets\config\access eyes_only.rb
 
-* Database creation
 
-* Database initialization
+* Database creation under model
 
-* How to run the test suite
+* Database initialization manual at db:migrate
+
+* How to run the test suite : no current tests
 
 * Services (job queues, cache servers, search engines, etc.)
 
