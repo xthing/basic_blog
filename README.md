@@ -23,3 +23,6 @@ Things you may want to cover:
 
 * ...
 # class_first
+A solution of 4th week projects for class inspection TTS spring 2018.
+
+
