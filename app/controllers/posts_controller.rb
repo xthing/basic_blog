@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
+
+
   # GET /posts
   # GET /posts.json
   def index
@@ -10,7 +12,8 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @post_time = create_time
+    # @post_time = create_time
+    @comment = Comment.new
   end
 
   # GET /posts/new
@@ -64,11 +67,11 @@ class PostsController < ApplicationController
   end
 
   private
-    def create_time
-      raw_time = Time.now
-      @time = raw_time.strftime("at %I:%M%p")
-      return @time
-    end
+    # def create_time
+    #   raw_time = Time.now
+    #   # @time = raw_time.strftime("at %I:%M%p")
+    #   return @time
+    # end
     # Use callbacks to share common setup or constraints between actions.
     def set_post
       @post = Post.find(params[:id])
@@ -76,6 +79,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :authur, :blog_entry)
+      params.require(:post).permit(:title, :authur, :blog_entry, :user_id)
     end
 end

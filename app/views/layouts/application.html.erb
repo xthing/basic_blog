@@ -9,16 +9,31 @@
   </head>
 
   <body>
-      
-<div class="jumbotron">
-  <div class="container">
-  	<%= yield %>
-   </div>
-</div>
 
+    <!-- <div class="jumbotron"> -->
+      <div class="container">   
+<div class="panel panel-default">
+        <div class="btn">
+  <!-- Check if email available -->
+        <% if (current_user != nil ) %>
+          <%= current_user.email %>
+        <% end %>
+        </div>
+        <div class="pull-right">
+          <% if user_signed_in? %>
+           <img class="icon" src='<%= current_user.avatar.url %>' alt=''>
 
+           <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-primary" %> 
+           <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
+          <% end %>
+        </div>
 
+  </div>
 
+      <div class="container">
 
+      	<%= yield %>
+       </div>
+    <!-- </div> -->
   </body>
 </html>

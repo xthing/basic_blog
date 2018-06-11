@@ -26,3 +26,4 @@ Things you may want to cover:
 A solution of 4th week projects for class inspection TTS spring 2018.
 
 
+# basic_blog

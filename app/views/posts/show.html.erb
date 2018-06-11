@@ -7,22 +7,36 @@
 			</p>
 		</div>
 		<div class="panel-heading">
-			<p>
-			  <strong>Authur:</strong>
-			  <%= @post.authur %>
-			</p>
+<p>
+    <!-- instead of @post.author -->
+ <img class="icon" src="<%= @post.user.avatar.url %>" alt="">
+new by <%= @post.user.username  %>
+</p>
 		</div>
 		<div class="panel-body">
 			<p>
-			  <strong>Daily Entry</strong><%= @post_time %>	</p>
+			  <strong>Daily Entry </strong><%= @post_time %>	
+			</p>
 			  <p><%= @post.blog_entry %></p>
-		
 		</div>
+
+
+
+
 		<button type="button" class="btn btn-primary">
 			<%= link_to 'Edit', edit_post_path(@post) %>
 		</button>
+	
+		<div class="comments">
+			<% render 'comments/form', comment: @comment %>
+		</div>
+
+
 		<button type="button" class="btn btn-warning">
 			<%= link_to 'Back', posts_path %>
 		</button>
+
+	
+	
 
 </div>

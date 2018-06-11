@@ -23,9 +23,12 @@
     <% @posts.each do |post| %>
       <div class="panel panel-default">
         <p class="panel-heading"><%= post.title %></p>
-        <p class="panel-heading"><%= post.authur %></p>
+        <p class="panel-heading"><img class="icon" src="<%= post.user.avatar.url %>" alt=""> daily by <%= post.user.username %></p>
         <p class="panel-body"><%= post.blog_entry %></p>
         <div class="post-btn btn-group">
+         
+
+
           <button class="btn btn-primary"><%= link_to 'Show', post %>
           </button>
       

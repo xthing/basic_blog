@@ -11,22 +11,22 @@
     </div>
   <% end %>
 
-  <div class="field" class="panel-heading">
-    <%= form.label :title %>
-    <%= form.text_field :title, id: :post_title %>
+<!-- in posts/_form.html.erb -->
+
+  <div class="form-group">
+    <%= form.text_field :title, placeholder: "Blog Entry Title", class: "form-control" %>
   </div>
 
-  <div class="field" class="panel-heading">
-    <%= form.label :authur %>
-    <%= form.text_field :authur, id: :post_authur %>
+  <div class="form-group">
+    <%= form.hidden_field :user_id, value: current_user.id %>
   </div>
 
-  <div class="field" class="panel-heading">
-    <%= form.label :blog_entry %>
-    <%= form.text_area :blog_entry, id: :post_blog_entry %>
+  <div class="form-group">
+    <%= form.text_area :blog_entry, placeholder: "Tell Us Something...", class: "form-control" %>
   </div>
 
-  <div class="">
-    <%= form.submit  class: "btn btn-alert" %>
+  <div class="actions">
+    <%= form.submit "Submit", class: "btn btn-primary" %>
   </div>
+
 <% end %>

@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
-  resources :posts
+
+  devise_for :users
+	resources :posts
+	resources :comments
+# resources are included in a set of 5 Edit - Create - View - Update - Destroy 	
+  # resources :posts do
+  # 	 resources :comments
+  # end
+
   get 'index' => 'practice#index'
 
   post 'index' => 'practice#index'
